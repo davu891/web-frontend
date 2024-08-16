@@ -1,0 +1,296 @@
+.flashcard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 90px;
+  }
+  
+  .flashcard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .flashcard {
+    width: 600px;
+    height: 350px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .flashcard-container.flipped .flashcard {
+    transform: rotateY(180deg);
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flashcard .front {
+    background: linear-gradient(135deg, #6341ea 15%, #261f69 55%);
+  }
+  .front h2, p{
+    color: aliceblue;
+    font-size: 2em;
+  }
+
+  .flashcard .back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #472fa7 15%, #140976 55%);
+    color: white;
+  }
+  .flashcard .front:hover, .flashcard .back:hover{
+  border: 3px solid var(--bs-cyan);
+  box-shadow: 0 15px 15px rgba(107, 245, 255, 0.1);
+  }
+  .flashcard .hole:hover {
+    background-color: var(--bs-cyan);
+  }
+  .kanji {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .tu_vung {
+    font-size: 2.5em;
+    color: var(--bs-cyan);
+  }
+  .y_nghia{
+    font-size: 2.5em;
+    color: var(--bs-cyan);
+  }
+  .nghia{
+    font-size: 2.5em;
+    color: var(--bs-cyan);
+  }
+  .speak-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: var(--bs-cyan);
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .speak-button:hover {
+    color: var(--bs-white);
+  }
+  
+  .hole {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #000 inset;
+  }
+  
+  .card-navigation, .study-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .nav-button, .study-button {
+    background-color: var(--bs-cyan);
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 15px;
+    margin: 0 20px;
+    border-radius: 5%;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover, .study-button:hover {
+    background-color: var(--bs-indigo);
+  }
+  
+  .autoplay-button {
+    background-color: var(--bs-cyan);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5%;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  
+  .autoplay-button:hover {
+    background-color: var(--bs-indigo);
+  }
+  
+  .card-counter, .study-counter {
+    font-size: 18px;
+    color: var(--bs-cyan);
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: var(--bs-gray);
+    height: 5px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #05da1b;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .control-panel {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .control-panel label {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .control-panel span {
+    margin-right: 10px;
+  }
+  
+  .unlearned-words {
+    width: 80%;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+  }
+  
+  .unlearned-words ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .unlearned-words li {
+    background-color: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    word-break: break-word;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .flashcard-wrapper {
+      width: 500px;
+      height: 400px;
+      margin-top: 70px;
+    }
+  
+    .flashcard {
+      width: 500px;
+      height: 300px;
+    }
+  
+    .kanji {
+      font-size: 2.5em;
+    }
+  
+    .tu_vung {
+      font-size: 2em;
+    }
+  
+    .nav-button, .study-button, .autoplay-button {
+      padding: 10px;
+      margin: 0 10px;
+    }
+  
+    .card-counter, .study-counter {
+      font-size: 16px;
+    }
+  
+  
+    .control-panel label {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  
+    .control-panel span {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .flashcard-wrapper {
+      width: 100%;
+      height: 350px;
+    }
+  
+    .flashcard {
+      width: 100%;
+      height: 100%;
+    }
+  
+    .kanji {
+      font-size: 2em;
+    }
+  
+    .tu_vung {
+      font-size: 1.5em;
+    }
+  
+    .nav-button, .study-button, .autoplay-button {
+      padding: 8px;
+      margin: 0 8px;
+    }
+  
+    .card-counter, .study-counter {
+      font-size: 14px;
+    }
+  
+  
+  
+    .control-panel label {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  
+    .control-panel span {
+      font-size: 12px;
+    }
+  }

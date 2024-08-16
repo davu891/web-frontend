@@ -1,0 +1,527 @@
+
+
+.sidebar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar {
+  background-color: none;
+  padding: 20px;
+  height: 100%;
+  position: relative; /* Đổi thành relative để sử dụng Flexbox căn giữa */
+  overflow: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  width: 100%;
+
+}
+
+
+.sidebar h2 {
+  text-align: center;
+  color: var(--bs-dark);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 5px 0;
+  text-align: left;
+}
+
+.sidebar ul li span {
+  color: var(--bs-dark);
+  font-size: 12px;
+}
+
+.sidebar-header h2 {
+  color: var(--bs-dark);
+}
+.sidebar.open {
+  left: 0;
+}
+
+/* Styles for sidebar header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  color: var(--bs-dark);
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Styles for toggle button */
+.toggle-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Show the toggle button on small screens */
+@media (max-width: 768px) {
+  .toggle-button {
+      display: block;
+  }
+
+  .sidebar {
+      left: -300px; /* Hide sidebar initially */
+  }
+
+  .sidebar.open {
+      left: 0; /* Show sidebar when open */
+  }
+}
+
+/* Ensure sidebar is always visible on large screens */
+@media (min-width: 769px) {
+  .sidebar {
+      left: 0;
+  }
+
+  .toggle-button {
+      display: none;
+  }
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: flex-start; /* Align items to the left */
+  padding: 10px;
+  background-color: none;
+  border-radius: 9px;
+  transition: background-color 0.3s;
+  border-bottom: 1px solid var(--bs-cyan);
+}
+
+.menu-item span {
+  margin-left: 5px; /* Reduced margin for tighter spacing */
+  color: #009fe3; /* Ensure text color matches your theme */
+  font-weight: 600; /* Make the text bold */
+}
+
+.menu-icon {
+  color: var(--bs-cyan); /* Color for the icon */
+  font-size: 12px;
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.menu-item:hover {
+  background-color: var(--bs-purple);
+  color: var(--bs-white); /* Màu sáng khi menu được bấm */
+}
+
+.menu-item.active {
+  background-color: var(--bs-purple);
+  color: var(--bs-white); /* Màu sáng khi menu được bấm */
+}
+
+.menu-item svg {
+  color: var(--bs-cyan); /* Thay đổi màu của icon thành màu dark */
+  font-size: 12px;
+}
+.vocabulary-item,
+.grammar-item {
+  list-style-type: none;
+  margin: 5px 0;
+}
+.item-text {
+  flex-grow: 1;
+}
+
+.item-percentage {
+  margin-left: auto;
+}
+
+
+
+.menu-icon:hover {
+  color: var(--bs-white); /* Mã màu tím */
+}
+
+.submenu {
+  list-style-type: none;
+  padding: 0 0 0 5px;
+  font-size: 12px;
+  background-color: none;
+  margin-left: 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  border-left: 1px solid var(--bs-cyan);
+
+}
+
+.submenu.open {
+  max-height: none; /* Tùy chỉnh chiều cao tối đa của submenu */
+  padding: 10px 0; /* Thêm khoảng đệm khi submenu được mở */
+}
+
+.submenu li {
+  margin: 10px 0;
+  border-bottom: 1px solid var(--bs-cyan);
+  background-color: none;
+  border-radius: 9px;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: var(--bs-dark);
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.submenu li a:hover {
+  color: var(--bs-cyan);
+}
+
+.submenu li a.active {
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
+}
+.submenu-2 {
+  margin-left: 50px;
+  border-left: 1px solid var(--bs-cyan);
+  height: auto;
+}
+
+.menu-item-2 {
+  border-bottom: 1px solid var(--bs-dark);
+}
+.main-content {
+  margin-left: 0;
+  padding: 20px;
+min-height: 100vh;
+  background-color: var(--bs-white);
+ 
+  overflow: auto;
+  color: var(--bs-dark);
+}
+
+.main-content h1 {
+  color: var(--bs-dark);
+}
+
+.menu-item span {
+    margin-left: auto;
+    padding-left: 10px;
+}
+
+.table-content{
+  margin: 50px 100px 0;
+}
+/* Styles for table */
+.table-container {
+  margin: 10px 10% 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  background-color: var(--bs-white);
+  color: var(--bs-dark);
+}
+
+table thead tr {
+  background-color: var(--bs-dark);
+  color: var(--bs-white);
+  text-align: left;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: none;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--bs-primary);
+}
+
+table tbody tr:hover {
+  background-color: var(--bs-cyan2);
+  color: var(--bs-white);
+}
+
+.line-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 0 20px; /* Thêm padding để tránh tràn */
+}
+
+
+/* Styles for floating container */
+.floating-container {
+  position: fixed;
+  background-color: none;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.floating-container button {
+  background-color: var(--bs-cyan);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.floating-container button:hover {
+  background-color: var(--bs-dark);
+  color: var(--bs-white);
+}
+
+
+
+
+.submenu-content {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 20px;
+}
+
+.submenu-item {
+  background-color: var(--bs-white);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.offcanvas-toggle-button {
+  display: none;
+}
+
+.offcanvas-toggle-col {
+  display: none;
+}
+
+/* Chỉ hiển thị nút ở màn hình nhỏ */
+@media (max-width: 767px) {
+  .offcanvas-toggle-button {
+    display: block;
+  }
+
+  .offcanvas-toggle-col {
+    display: block;
+  }
+}
+
+/* Ẩn nội dung bình thường ở màn hình nhỏ */
+@media (max-width: 767px) {
+  .content-col {
+    display: none;
+  }
+}
+
+/* Hiển thị lại nội dung ở màn hình lớn */
+@media (min-width: 768px) {
+  .content-col {
+    display: block;
+  }
+
+}
+@media (max-width: 500px) {
+  .table-container{
+    margin: 0;
+  }
+  table th, tr{
+    font-size: 11px;
+  }
+}
+/* Breadcrumb container */
+ .breadcrumb-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Khoảng cách giữa breadcrumb và nội dung bên dưới */
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.breadcrumb-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Breadcrumb item */
+.breadcrumb-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bs-cyan); /* Use a dark color for breadcrumb items */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: var(--bs-info); /* Customize the separator color */
+  margin: 0 5px; /* Add some spacing around the separator */
+}
+
+/* Active breadcrumb item */
+.breadcrumb-item.active {
+  color: var(--bs-cyan); /* Highlight the active breadcrumb item */
+  font-weight: bold;
+}
+
+/* Breadcrumb links */
+.breadcrumb-item a {
+  color: var(--bs-cyan); /* Use a cyan color for breadcrumb links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--bs-info); /* Change color on hover */
+}
+.toggle-furigana-button {
+  margin-left: auto; /* Đẩy button sang bên phải */
+}
+.toggle-furigana-button:hover {
+  background-color: var(--bs-primary);
+}
+/* Thay đổi kiểu cho phần ngữ pháp */
+.grammar-item {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 800px; /* Đặt kích thước tối đa để nội dung không quá rộng */
+  text-align: left;
+  overflow-y: hidden; /* Đảm bảo nội dung vượt quá chiều cao sẽ cuộn trong vùng này */
+
+}
+
+/* Định dạng tiêu đề chính của phần ngữ pháp */
+.grammar-item h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+  color: var(--bs-purple); /* Màu sắc tiêu đề chính */
+  font-weight: bold; /* Đậm chữ */
+  padding-top: 20px;
+}
+
+/* Định dạng tiêu đề phụ trong phần ngữ pháp */
+.grammar-item h4 {
+  margin: 15px 0 5px 0;
+  font-size: 1.2em;
+  color: #555; /* Màu sắc tiêu đề phụ */
+}
+
+/* Định dạng đoạn văn nội dung */
+.grammar-item p {
+  margin: 0 0 10px 0;
+  font-size: 1em;
+  color: #666; /* Màu sắc văn bản nội dung */
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+  white-space: pre-line; /* Duy trì định dạng xuống dòng và khoảng trắng */
+
+}
+.custom-box {
+  border-left: 5px solid #00bcd4; /* Màu viền bên trái */
+  padding: 10px 15px; /* Khoảng cách bên trong box */
+  margin: 15px 0; /* Khoảng cách bên ngoài box */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng nhẹ */
+  font-style: italic; /* Nghiêng chữ */
+  font-size: 16px; /* Kích thước chữ */
+  line-height: 1.5; /* Khoảng cách giữa các dòng */
+  white-space: pre-line; /* Duy trì định dạng xuống dòng và khoảng trắng */
+  }
+  .section-title {
+    display: flex;
+    align-items: center; /* Canh giữa icon và text */
+    font-size: 24px; /* Kích thước của tiêu đề */
+    color: #00bcd4; /* Màu chữ */
+    font-weight: bold; /* Đậm chữ */
+}
+
+.star-icon {
+    color: #fdd835; /* Màu vàng cho ngôi sao */
+    margin-right: 8px; /* Khoảng cách giữa ngôi sao và text */
+    font-size: 20px; /* Kích thước ngôi sao */
+}
+
+.title-text {
+    display: flex;
+    align-items: center;
+}
+
+.title-text::before {
+    content: '›'; /* Thêm ký tự mũi tên */
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+
+.thirteen h1 {
+  position:relative; font-size:20px; 
+  font-weight:700;  
+  letter-spacing:0px; 
+  text-transform:uppercase; 
+  width:200px; 
+  text-align:center; 
+  margin:auto; 
+  margin-bottom: 20px;
+  white-space:nowrap; 
+  border:2px solid #222;
+  padding:5px 11px 3px 11px;
+  color:#c50000;
+}
+.thirteen h1:before, .thirteen h1:after {
+    background-color: #c50000;
+    position:absolute; 
+    content: '';
+    height: 7px;
+    width: 7px; border-radius:50%;
+    bottom: 12px;
+}
+.thirteen h1:before {
+   left:-20px;
+}
+.thirteen h1:after {
+   right:-20px;
+}

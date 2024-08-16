@@ -1,0 +1,36 @@
+*Bố cục các trang:
+Thư mục: courses:
+ + Trang Khóa học (learn): đưa ra các khóa học.
+ + Trang Giới thiệu, khái quát khóa học: syllabus
+ + Trang Nội dung học. coursescontent
+ + Trang Học từ vựng. vocabulary
+ + Trang Học kanji. kanji
+ + Trang Học Ngữ pháp. grammar
+
+ Trang giới thiệu Khóa học - AboutCourse: 
+  1. Tạo nội dung giới thiệu các khóa học Online: N5,N4,N3
+     - Các nội dung cho vào CSDL.
+       + Mục tiêu khóa học.
+       + Nội dung
+       + phương pháp học.
+     - Đặt tên csdl: GTKH_N5, GTKH_N4 GTKH_N3
+  2. Bố trí giao diện trang giới thiệu.
+
+  3. Tạo csdl
+     - Từ vựng, np, kanji khóa học: N5,N4,N3:
+       + Từ vựng: level, unit, tu_vung, kanji, y_nghia.
+         -> cách hiển thị: List tv -> Flashcard -> Quiz Nhật <-> Việt( kết quả lưu vào csdl user)
+       + Ngữ pháp: 
+         -> Video giảng NP -> Điểm lại mẫu np bằng text 
+         -> bài tập (hỏi về Ý nghĩa -> đáp án nào dịch Đúng? -> điền vào chỗ trống.( kết quả lưu vào csdl user)
+       + Kanji:
+         -> Kanji - Hán việt -> Flashcard -> Quiz ( kết quả lưu vào csdl user)
+         -> Từ vựng liên quan -> Flashcard -> Quiz ( kết quả lưu vào csdl user)
+       + Minitest buổi học:
+         -> Từ vựng: điền vào chỗ trống. (5 câu)
+         -> Ngữ pháp: điền vào chỗ trống. (5 câu) + 3 câu.
+         -> Kanji: chọn cách đọc -kanji đúng. (6 câu)
+         -> Đọc hiểu: 1 bài văn ngắn + 1 câu hỏi
+
+    <!-- HTML !-->
+

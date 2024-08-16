@@ -1,0 +1,44 @@
+.admin-container {
+    display: flex;
+}
+
+.admin-sidebar {
+    width: 200px;
+    background: linear-gradient(135deg,#7761cd 15%,#32297d 55%);
+
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.admin-sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin: 10px 0;
+}
+
+.admin-sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.admin-sidebar ul li a.active, .admin-sidebar ul li a:hover {
+    background: #1eb297;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 20px;
+}

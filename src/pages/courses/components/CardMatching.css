@@ -1,0 +1,126 @@
+.card-matching {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.kanji-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.kanji-item {
+    font-size: 24px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.vocab-and-boxes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+.vocab-and-box-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.vocab-item, .empty-box {
+    width: 45%; /* Đảm bảo cả hai cột chiếm 45% chiều rộng */
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 40px; /* Đảm bảo văn bản căn giữa theo chiều dọc */
+}
+
+.vocab-item {
+    background-color: #f9f9f9;
+}
+
+.empty-box {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+.empty-box.active {
+    border-color: #007bff;
+    background-color: #cce5ff;
+}
+
+.empty-box.correct {
+    border-color: #28a745; /* Màu xanh lá cây cho đáp án đúng */
+    background-color: #d4edda; /* Màu nền xanh nhạt cho đáp án đúng */
+}
+
+.empty-box.incorrect {
+    border-color: #dc3545; /* Màu đỏ cho đáp án sai */
+    background-color: #f8d7da; /* Màu nền đỏ nhạt cho đáp án sai */
+}
+
+.check-answers-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 80%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.instructions-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.instructions-button:hover {
+    background-color: #31b0d5;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
